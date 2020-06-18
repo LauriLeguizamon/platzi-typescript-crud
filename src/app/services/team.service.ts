@@ -4,7 +4,7 @@ import { Team } from './../interfaces/team';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-export const TeamsTableHeaders = ['name', 'country', 'players'];
+export const TeamsTableHeaders = ['Name', 'Country', 'Players'];
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +14,7 @@ export class TeamService {
 
   constructor(private db: AngularFireDatabase) {
     this.teamsDb = this.db.list('/teams', ref => ref.orderByChild('name'));
-   }
-
+  }
    getTeams(): Observable<Team[]> {
     return this.teamsDb.snapshotChanges().pipe(
       map(changes => {
