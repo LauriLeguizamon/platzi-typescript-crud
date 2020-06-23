@@ -168,6 +168,7 @@ form {
     border-radius: 15px;
     margin-top: 0px;
     margin-bottom: 0px;
+    cursor: pointer;
   }
   &.required label {
     font-weight: bold;
@@ -206,6 +207,7 @@ a {
   padding: 1em 1.5em;
   border-radius: 3px;
   text-decoration: none;
+  cursor: pointer;
   i {
     padding-right: 0.3em;
   }
