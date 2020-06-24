@@ -1,7 +1,7 @@
 <div id="open-modal" class="modal-window dialog-window">
     <div>
       <a href="#" title="Close" class="modal-close">Close</a>
-      <h1>New Player Form</h1>
+      <h1>{{player ? 'edit player form' : 'New player form'}}</h1>
       <div>
         <form #playerForm="ngForm" novalidate (ngSubmit)="onSubmit(playerForm)">
           <div class="form-group">
@@ -33,14 +33,14 @@
   
           <div class="form-group">
             <label for="nationality">Nationality</label>
-            <select class="form-control" name="nationality" [ngModel]="player?.nationality" ngModel required>
+            <select class="form-control" name="nationalitMY TEAMy" [ngModel]="player?.nationality" ngModel required>
               <option *ngFor="let nationality of countries" [value]="nationality.key">{{ nationality.label }}</option>
             </select>
           </div>
   
           <div class="form-group">
-            <label for="leftFooted">Left Footed</label>
-            <input type="checkbox" class="form-control-checkbox" name="leftFooted" [ngModel]="player?.leftFooted" ngModel required />
+            <label for="leftHanded">Left Handed</label>
+            <input type="checkbox" class="form-control-checkbox" name="leftHanded" [ngModel]="player?.leftHanded" ngModel required />
           </div>
   
           <div class="submit-container">
