@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Player } from '../interfaces/player';
 import { PlayerService } from '../services/player.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-player-table',
@@ -12,9 +12,9 @@ export class PlayerTableComponent implements OnInit {
   public players$: Observable<Player[]>;
   public selectedPlayer: Player;
   public showModal = false;
-  constructor(private playerService: PlayerService) { }
+  constructor(private playerService: PlayerService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.players$ = this.playerService.getPlayers();
   }
 

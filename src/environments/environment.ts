@@ -4,15 +4,13 @@
 
 export const environment = {
   production: false,
-   firebase: {
-    apiKey: 'AIzaSyCcIscqAIOnCxrVv0dKT0cpNn1PbWgu5Bk',
-    authDomain: 'typescript-platzi-7c8e1.firebaseapp.com',
-    databaseURL: 'https://typescript-platzi-7c8e1.firebaseio.com',
-    projectId: 'typescript-platzi-7c8e1',
-    storageBucket: 'typescript-platzi-7c8e1.appspot.com',
-    messagingSenderId: '207304040218',
-    appId: '1:207304040218:web:dcf0649514185d686e16a3',
-    measurementId: 'G-C9RWB9QY7W'
+  firebase: {
+    apiKey: 'AIzaSyBi4UoAAm04lXu3W6MhaqGyBCYIzQLi51I',
+    authDomain: 'typescript-platzi-a7cf1.firebaseapp.com',
+    databaseURL: 'https://typescript-platzi-a7cf1.firebaseio.com',
+    projectId: 'typescript-platzi-a7cf1',
+    storageBucket: 'typescript-platzi-a7cf1.appspot.com',
+    messagingSenderId: '475467763367'
   }
 };
 

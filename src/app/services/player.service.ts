@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFireList, AngularFireDatabase } from '@angular/fire/database';
-import { Player } from './../interfaces/player';
+import { Player } from '../interfaces/player';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +17,7 @@ export class PlayerService {
   getPlayers(): Observable<Player[]> {
     return this.playersDb.snapshotChanges().pipe(
       map(changes => {
-        return changes.map(c => ({$key: c.payload.key, ...c.payload.val()}));
+        return changes.map(c => ({ $key: c.payload.key, ...c.payload.val() }));
       })
     );
   }
@@ -37,4 +36,3 @@ export class PlayerService {
     this.db.list('/players').update($key, newPlayerData);
   }
 }
-

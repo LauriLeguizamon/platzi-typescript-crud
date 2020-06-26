@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamService, TeamsTableHeaders } from '../services/team.service';
-import { Team } from '../interfaces/team';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
+import { Team } from '../interfaces/team';
 import { Countries } from '../interfaces/player';
 
 @Component({
@@ -12,21 +12,21 @@ import { Countries } from '../interfaces/player';
 })
 export class TeamTableComponent implements OnInit {
   public teams$: Observable<Team[]>;
-  public teamsHeaders = TeamsTableHeaders;
+  public tableHeaders = TeamsTableHeaders;
 
-  constructor(private teamService: TeamService) { }
+  constructor(private teamService: TeamService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.teams$ = this.teamService.getTeams();
     this.teamService
       .getTeams()
       .pipe(take(1))
       .subscribe(teams => {
-        if (teams.length === 0 ){
+        if (teams.length === 0) {
           const team: Team = {
-            name: 'MyTeam',
+            name: 'MyAmazingTeam',
             country: Countries.Argentina,
-            players: null,
+            players: null
           };
           this.teamService.addTeam(team);
         }
